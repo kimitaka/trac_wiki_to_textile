@@ -2,7 +2,6 @@
 
 TRAC_DB_PATH = 'trac.db'
 OUT_PATH = 'wiki'
-GITHUB_WIKI_URL = '/seven1m/onebody/wikis/'
 
 require 'sqlite3'
 
@@ -18,7 +17,7 @@ pages.each do |title, body|
     body.gsub!(/==\s(.+?)\s==/, "h2. #{'\1'} \n")
     body.gsub!(/=\s(.+?)\s=[\s\n]*/, '')
     body.gsub!(/\[(http[^\s\[\]]+)\s([^\[\]]+)\]/, '"\2":\1')
-    body.gsub!(/\[([^\s]+)\s(.+)\]/, '"\2":' + GITHUB_WIKI_URL + '\1')
+    body.gsub!(/\[([^\s]+)\s(.+)\]/, '[[\1 | \2]]')
     body.gsub!(/([^"\/\!])(([A-Z][a-z0-9]+){2,})/, '\1[[\2]]')
     body.gsub!(/\!(([A-Z][a-z0-9]+){2,})/, '\1')
     body.gsub!(/'''(.+)'''/, '*\1*')
