@@ -25,7 +25,7 @@ pages.each do |title, body|
     body.gsub!(/==\s(.+?)\s==/,       "h2. #{'\1'} \n\n")
     body.gsub!(/=\s(.+?)\s=[\s\n]*/,  "h1. #{'\1'} \n\n")
 # table
-    body.gsub!(/||/,  "|")
+    body.gsub!(/\|\|/,  "|")
 # link
     body.gsub!(/\[(http[^\s\[\]]+)\s([^\[\]]+)\]/, ' "\2":\1' )
     body.gsub!(/\[([^\s]+)\s(.+)\]/, ' [[\1 | \2]] ')
