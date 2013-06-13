@@ -28,11 +28,11 @@ pages.each do |title, body|
     body.gsub!(/\[\[PageOutline.*\]\]/, '{{toc}}')
     body.gsub!(/\[\[Image\((.+?)\)\]\]/, '!\1!')
 # header
-    body.gsub!(/=====\s(.+?)\s=====/, "h5. #{'\1'} \n\n")
-    body.gsub!(/====\s(.+?)\s====/,   "h4. #{'\1'} \n\n")
-    body.gsub!(/===\s(.+?)\s===/,     "h3. #{'\1'} \n\n")
-    body.gsub!(/==\s(.+?)\s==/,       "h2. #{'\1'} \n\n")
-    body.gsub!(/=\s(.+?)\s=[\s\n]*/,  "h1. #{'\1'} \n\n")
+    body.gsub!(/=====\s(.+?)\s=====/, "h5. #{'\1'}\n\n")
+    body.gsub!(/====\s(.+?)\s====/,   "h4. #{'\1'}\n\n")
+    body.gsub!(/===\s(.+?)\s===/,     "h3. #{'\1'}\n\n")
+    body.gsub!(/==\s(.+?)\s==/,       "h2. #{'\1'}\n\n")
+    body.gsub!(/=\s(.+?)\s=[\s\n]*/,  "h1. #{'\1'}\n\n")
 # table
     body.gsub!(/\|\|/,  "|")
 # link
