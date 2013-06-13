@@ -45,12 +45,18 @@ pages.each do |title, body|
     body.gsub!(/''(.+)''/, '_\1_')
     body.gsub!(/`(.+)`/, '@\1@')
 # itemize
-    body.gsub!(/^\s\s\s\*/, '***')
-    body.gsub!(/^\s\s\*/, '**')
-    body.gsub!(/^\s\*/, '*')
-    body.gsub!(/^\s\s\s\d\./, '###')
-    body.gsub!(/^\s\s\d\./, '##')
-    body.gsub!(/^\s\d\./, '#')
+    body.gsub!(/^\s\s\s\s\s\s\s\s\s\s\s?\*/, '******') # 11
+    body.gsub!(/^\s\s\s\s\s\s\s\s\s?\*/, '*****') # 9
+    body.gsub!(/^\s\s\s\s\s\s\s?\*/, '****') # 7
+    body.gsub!(/^\s\s\s\s\s?\*/, '***') # 5
+    body.gsub!(/^\s\s\s?\*/, '**') # 3
+    body.gsub!(/^\s?\*/, '*') # 1
+    body.gsub!(/^\s\s\s\s\s\s\s\s\s\s\s?\d\./, '######') # 11
+    body.gsub!(/^\s\s\s\s\s\s\s\s\s?d\./, '#####') # 9
+    body.gsub!(/^\s\s\s\s\s\s\s?\d\./, '####') # 7
+    body.gsub!(/^\s\s\s\s\s?\d\./, '###') # 5
+    body.gsub!(/^\s\s\s?\d\./, '##') # 3
+    body.gsub!(/^\s?\d\./, '#') # 1
     file.write(body)
   end
 end
