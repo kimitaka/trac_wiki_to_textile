@@ -44,6 +44,7 @@ pages.each do |title, body|
     body.gsub!(/'''(.+)'''/, '*\1*')
     body.gsub!(/''(.+)''/, '_\1_')
     body.gsub!(/`(.+)`/, '@\1@')
+    body.gsub!(/~~(.+)~~/, '-\1-') # strikeout
 # itemize
     body.gsub!(/^\s\s\s\s\s\s\s\s\s\s\s?\*/, '******') # 11
     body.gsub!(/^\s\s\s\s\s\s\s\s\s?\*/, '*****') # 9
