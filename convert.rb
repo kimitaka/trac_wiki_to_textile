@@ -16,7 +16,7 @@ db = SQLite3::Database.new(TRAC_DB_PATH)
 pages = db.execute('select name, text from wiki w2 where version = (select max(version) from wiki where name = w2.name);')
 
 pages.each do |title, body|
-  file_path = OUT_PATH + title.gsub(/\s/, '') + '.textile'
+  file_path = OUT_PATH + '/' + title.gsub(/\s/, '') + '.textile'
   make_directory (File.dirname file_path)
   File.open(file_path, 'w') do |file|
     body.gsub!(/\r/, '')
