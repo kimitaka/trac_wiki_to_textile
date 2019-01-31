@@ -1,5 +1,8 @@
 h1. Trac Wiki to Textile
 
+!https://scrutinizer-ci.com/g/kimitaka/trac_wiki_to_textile/badges/quality-score.png?b=master!:https://scrutinizer-ci.com/g/kimitaka/trac_wiki_to_textile/?branch=master
+!https://scrutinizer-ci.com/g/kimitaka/trac_wiki_to_textile/badges/build.png?b=master!:https://scrutinizer-ci.com/g/kimitaka/trac_wiki_to_textile/build-status/master
+
 This is a *very* rough start of a script to help convert Trac wiki syntax to Textile friendly syntax.
 
 To use:
